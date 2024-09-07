@@ -4,29 +4,29 @@ using namespace std;
 class Stack {
     public:
     int *arr;
-    int limit, maxSize;
+    int top, maxSize;
 
     Stack(int maxSize) {
         this->maxSize = maxSize;
         arr = new int[maxSize];
-        limit = -1;
+       top = -1;
     }
 
     void push(int data) {
-        if(limit == maxSize-1) {
+        if(top == maxSize-1) {
             cout << "Stack overflow!" << endl;
             return;
         }
 
-        limit++;
-        arr[limit] = data;
+       top++;
+        arr[top] = data;
     }
 
     void pop() {
-        if(limit == -1) {
+        if(top == -1) {
             cout << "Stack underflow!" << endl;
         } else {
-            limit--;
+           top--;
         }
     }
 
